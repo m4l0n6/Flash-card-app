@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./Wingman.png">
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Phần đầu -->
+      <div id="header">
+        <ul id="nav">
+          <li><h1>OWLFLASH</h1></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#context">Các chủ đề </a></li>
+        </ul>
+      </div>
+
+      <!-- Phần giới thiệu -->
+      <div id="introduce">
+        <div class="introduce-header hidden"><h1>Chào mừng đến với trang học lập trình bằng flashcard</h1></div>
+      </div>
+
+      <!-- Phần nội dung -->
+      <div id="context" class="hidden">
+        <h2>Hôm nay bạn muốn học gì</h2>
+        <p>Mỗi ngày bạn chỉ nên học 20 flashcard thôi nhé</p>
+        <!-- Phần hiển trị các nút để lựa chọn chủ đề -->
+        <div class="courses-list">
+          <!-- Phần hiển thị của Python -->
+          <div class="courses-section-item hidden">
+            <div class="item-container">
+              <div class="item-icon">
+                <img src="./Icon/python.png" alt="">
+              </div>
+              <div class="item-content python">
+                <div class="item-name">
+                  <h1>Python</h1>
+                </div>
+                <div class="item-button">
+                  <button class="python-buton" onclick="showPython()"><a href="#course-container">Bắt đầu</a></button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="item-process">
+              <div class="python-status">Chưa hoàn thành</div>
+            </div>
+          </div>
+
+          <!-- Phần hiển thị của Javacript -->
+          <div class="courses-section-item hidden">
+            <div class="item-container">
+              <div class="item-icon">
+                <img src="./Icon/js.png" alt="">
+              </div>
+              <div class="item-content javascript">
+                <div class="item-name">
+                  <h1>Javacript</h1>
+                </div>
+                <div class="item-button">
+                  <button class="js-buton" onclick="showJs()"><a href="#course-container">Bắt đầu</a></button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="item-process">
+              <div class="js-status">Chưa hoàn thành</div>
+            </div>
+          </div>
+
+          <!-- Phần hiển thị của HTML -->
+          <div class="courses-section-item hidden">
+            <div class="item-container">
+              <div class="item-icon">
+                <img src="./Icon/html-5.png" alt="">
+              </div>
+              <div class="item-content html">
+                <div class="item-name">
+                  <h1>HTML</h1>
+                </div>
+                <div class="item-button">
+                  <button class="html-buton" onclick="showHtml()"><a href="#course-container">Bắt đầu</a></button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="item-process">
+              <div class="html-status">Chưa hoàn thành</div>
+            </div>
+          </div>
+          <!-- Phần hiển thị của CSS -->
+          <div class="courses-section-item hidden">
+            <div class="item-container">
+              <div class="item-icon">
+                <img src="./Icon/css-3.png" alt="">
+              </div>
+              <div class="item-content css">
+                <div class="item-name">
+                  <h1>CSS</h1>
+                </div>
+                <div class="item-button">
+                  <button class="css-buton" onclick="showCss()"><a href="#course-container">Bắt đầu</a></button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="item-process">
+              <div class="css-status">Chưa hoàn thành</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div> <!-- phần kết thúc của context  -->
+
+      <!-- Phần hiển thị các khóa học -->
+      <div id="course-container" class=" hidden">
+        <div class="question-display">
+          <div><p>Phần hiển thị câu hỏi ở đây</p></div>
+        </div>
+        <!-- Phần câu hỏi của python: bắt đầu -->
+        <div class="course-section python-course hide">
+          <div class="course-header">
+            <h3>Python flashcard</h3>
+          </div>
+          <div class="python-process">
+            <p>Tiến độ: 0%</p>  
+          </div>
+          <div class="card-container">  
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Python là gì?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Python là một ngôn ngữ lập trình bậc cao, đa năng, được thiết kế để dễ đọc, dễ viết và dễ bảo trì.</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Cách khai báo biến trong Python như thế nào?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p> Biến được khai báo bằng cách gán giá trị trực lùi <br> ví dụ: x = 5, name = "Python".</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>List trong Python là gì?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>List là một cấu trúc dữ liệu cho phép lưu trữ một danh sách các phần tử có thể thay đổi <br> ví dụ: my_list = [1, 2, 3, "Python"].</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Vòng lặp for trong Python được sử dụng như thế nào?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Vòng lặp for dùng để lặp qua các phần tử của một dãy <br> ví dụ: for i in range(5): print(i).</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Hàm len() trong Python có tác dụng gì?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Hàm len() trả về độ dài (số phần tử) của một đối tượng như list, string, tuple.</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Lambda function trong Python là gì?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Lambda function là một hàm ẩn danh có thể có nhiều tham số nhưng chỉ có một biểu thức <br> ví dụ: lambda x, y: x + y.</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Dictionary trong Python là gì?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Dictionary là một cấu trúc dữ liệu lưu trữ các cặp khóa-giá trị <br> ví dụ: my_dict = {"name": "Python", "version": 3.9}.</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Làm thế nào để đọc một file trong Python?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Sử dụng hàm open() <br>  ví dụ: with open("file.txt", "r") as file: content = file.read().</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Làm thế nào để xử lý ngoại lệ trong Python?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Sử dụng khối lệnh try và except</p>
+              </div>
+            </div>
+
+            <div class="card python-card">
+              <div class="question-card">
+                <p>Thư viện numpy trong Python được sử dụng để làm gì?</p>
+                <div class="check">
+                  <button class="remember python-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget python-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thư viện numpy được sử dụng để tính toán khoa học, đặc biệt là với các mảng và ma trận đa chiều.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="reset python-reset"><button onclick="pythonReset()">Làm lại tiến độ</button></div>
+          
+          <div class="navigation">
+            <button title="Lùi"  class="prev python-prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="quanity python-card-quanity"></div>
+            <button title="Tiến" class="next python-next"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <!-- Phần câu hỏi của python: kết thúc -->
+
+        <!-- Phần câu hỏi của javascript: bắt đầu -->
+        <div class="course-section js-course hide">
+          <div class="course-header">
+            <h3>Javacript flashcard</h3>
+          </div>
+          <div class="js-process">
+            <p>Tiến độ: 0%</p>  
+          </div>
+          <div class="card-container">  
+            <div class="card js-card">
+              <div class="question-card">
+                <p>JavaScript là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>JavaScript là một ngôn ngữ lập trình được sử dụng để tạo ra các trang web tương tác. Nó là một phần quan trọng của các công nghệ web cùng với HTML và CSS.</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Sự khác biệt giữa let, var và const trong JavaScript là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>var có phạm vi toàn cục hoặc hàm, let và const có phạm vi khối. const được sử dụng để khai báo các hằng số không thể thay đổi.</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Một callback function là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Callback function là một hàm được truyền vào một hàm khác như là một đối số và được thực thi sau khi hàm đó hoàn thành.</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Arrow function trong JavaScript là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Arrow function là một cú pháp ngắn gọn để viết hàm trong JavaScript, với cú pháp: <br> const functionName = (parameters) => { // code }.</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>DOM là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>DOM (Document Object Model) là một giao diện lập trình cho các tài liệu HTML và XML, đại diện cho trang dưới dạng cấu trúc cây, cho phép thay đổi nội dung và cấu trúc trang web.</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Sự khác biệt giữa == và === trong JavaScript là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>== so sánh hai giá trị sau khi chuyển đổi kiểu của chúng nếu cần thiết (so sánh lỏng lẻo), còn === so sánh cả giá trị và kiểu dữ liệu (so sánh chặt chẽ).</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Event delegation là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Event delegation là kỹ thuật xử lý sự kiện ở một phần tử cấp cao hơn thay vì phần tử cụ thể nơi sự kiện xảy ra, lợi dụng sự nổi bọt (bubbling) của sự kiện.</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Async/Await là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Async/Await là cú pháp trong JavaScript để xử lý các thao tác bất đồng bộ một cách đồng bộ, giúp mã dễ đọc và dễ bảo trì hơn.</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Promise trong JavaScript là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Promise là một đối tượng đại diện cho kết quả của một thao tác bất đồng bộ, có thể ở trạng thái chờ (pending), thành công (fulfilled), hoặc thất bại (rejected).</p>
+              </div>
+            </div>
+
+            <div class="card js-card">
+              <div class="question-card">
+                <p>Một Closure trong JavaScript là gì?</p>
+                <div class="check">
+                  <button class="remember js-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget js-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Closure là một hàm có quyền truy cập vào các biến từ phạm vi hàm bao quanh nó, ngay cả sau khi hàm bao quanh đã thực thi xong.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reset js-reset"><button onclick="jsReset()">Làm lại tiến độ</button></div>
+          
+          <div class="navigation">
+            <button title="Lùi" class="prev js-prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="quanity js-card-quanity"></div>
+            <button title="Tiến"  class="next js-next"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <!-- Phần câu hỏi của javascript: kết thúc -->
+
+        <!-- Phần câu hỏi của html: bắt đầu -->
+        <div class="course-section html-course hide">
+          <div class="course-header">
+            <h3>HTML flashcard</h3>
+          </div>
+          <div class="html-process">
+            <p>Tiến độ: 0%</p>  
+          </div>
+          <div class="card-container">  
+            <div class="card html-card">
+              <div class="question-card">
+                <p>HTML là gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>HTML (HyperText Markup Language) là ngôn ngữ dùng để tạo và cấu trúc các trang web.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thẻ &lt;header&gt; dùng để làm gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;header&gt; chứa các thông tin meta, liên kết đến CSS, tập lệnh và tiêu đề trang.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thẻ &lt;a&gt; có chức năng gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;a&gt; được sử dụng để tạo liên kết đến các trang web khác.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thẻ &lt;img&gt; dùng để làm gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;img&gt; được dùng để chèn hình ảnh vào trang web.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thẻ &lt;div&gt; có công dụng gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;div&gt; được dùng để tạo các khối chứa nội dung và dễ dàng quản lý bố cục trang.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thẻ &lt;form&gt; có chức năng gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;form&gt; dùng để tạo biểu mẫu thu thập dữ liệu từ người dùng.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Sự khác nhau giữa thẻ &lt;ul&gt; và &lt;ol&gt; là gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;ul&gt; tạo danh sách không thứ tự (bullet points), còn thẻ &lt;ol&gt; tạo danh sách có thứ tự (số thứ tự).</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thẻ &lt;table&gt; dùng để làm gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;table&gt; dùng để tạo bảng dữ liệu trên trang web.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thuộc tính 'alt' của thẻ &lt;img&gt; có tác dụng gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p> Thuộc tính 'alt' cung cấp văn bản thay thế cho hình ảnh, hỗ trợ SEO và truy cập.</p>
+              </div>
+            </div>
+
+            <div class="card html-card">
+              <div class="question-card">
+                <p>Thẻ &lt;meta&gt; dùng để làm gì?</p>
+                <div class="check">
+                  <button class="remember html-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget html-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Thẻ &lt;meta&gt; cung cấp thông tin meta như mô tả, từ khóa, và thông tin tác giả cho trang web.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reset html-reset"><button onclick="htmlReset()">Làm lại tiến độ</button></div>
+          
+          <div class="navigation">
+            <button title="Lùi" class="prev html-prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="quanity html-card-quanity"></div>
+            <button title="Tiến"  class="next html-next"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <!-- Phần câu hỏi của html: kết thúc -->
+
+        <!-- Phần câu hỏi của css: bắt đầu -->
+        <div class="course-section css-course hide">
+          <div class="course-header">
+            <h3>CSS flashcard</h3>
+          </div>
+          <div class="css-process">
+            <p>Tiến độ: 0%</p>  
+          </div>
+          <div class="card-container">  
+            <div class="card css-card">
+              <div class="question-card">
+                <p>CSS là gì?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>CSS (Cascading Style Sheets) là ngôn ngữ dùng để mô tả giao diện và định dạng của một trang web được viết bằng HTML</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Selector trong CSS là gì?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Selector là một thành phần trong CSS dùng để chọn các phần tử HTML mà bạn muốn áp dụng kiểu dáng.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Cách viết một class selector trong CSS?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Sử dụng dấu chấm trước tên class <br> ví dụ: .myClass { color: red; }.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p> ID selector được viết như thế nào?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>ĐSử dụng dấu thăng trước tên ID, <br> ví dụ: #myId { font-size: 20px; }.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Inline CSS là gì?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Inline CSS là cách thêm kiểu dáng trực tiếp vào thẻ HTML thông qua thuộc tính style <br> ví dụ: &lt;div style="color: blue;"&gt;.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Sự khác nhau giữa margin và padding?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Margin là khoảng cách bên ngoài viền của phần tử, còn padding là khoảng cách bên trong viền của phần tử.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Cách dùng thuộc tính flex?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>display: flex; sử dụng để tạo layout linh hoạt trong CSS, sắp xếp các phần tử con một cách dễ dàng.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Chức năng của media queries là gì?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Media queries giúp tạo ra các kiểu dáng CSS khác nhau cho các kích thước màn hình khác nhau.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Pseudo-class là gì?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Pseudo-class là từ khóa được thêm vào selector để chỉ định trạng thái đặc biệt của phần tử <br> ví dụ: :hover, :active.</p>
+              </div>
+            </div>
+
+            <div class="card css-card">
+              <div class="question-card">
+                <p>Cách liên kết tệp CSS ngoài vào trang HTML?</p>
+                <div class="check">
+                  <button class="remember css-remember" onclick="event.stopPropagation()">Đã nhớ</button>
+                  <button class="forget css-forget" onclick="event.stopPropagation()">Chưa nhớ</button>
+                </div>
+              </div>
+              <div class="answer-card">
+                <p>Sử dụng thẻ &lt;link&gt; trong phần &lt;head&gt;, ví dụ: &lt;link rel="stylesheet" href="styles.css" &gt;.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reset css-reset"><button onclick="cssReset()">Làm lại tiến độ</button></div>
+          
+          <div class="navigation">
+            <button title="Lùi" class="prev css-prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="quanity css-card-quanity"></div>
+            <button title="Tiến"  class="next css-next"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <!-- Phần câu hỏi của css: kết thúc -->
+      </div><!-- Phần kết thúc của course -->
+      
+      <!-- Phần kết thúc của thông báo -->
+    </div> <!-- Phần kết thúc của container -->
+
+    <!-- Phần bắt đầu của thanh thông báo -->
+    <div id="toast" class="hide">
+      <div class="toast">
+          <div class="toast__icon ">
+              <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="toast__body">   
+              <div class="toast__tittle">Thành công</div>
+              <p class="toast__msg">Chúc mừng bạn đã học xong</p>
+          </div>
+          <div class="toast__close">
+              <i class="fa-solid fa-xmark"></i>
+          </div>
+      </div>
+    </div>
+
+    <div class="next-course hide">
+      <a href="#context">Học tiếp<i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+    
+    <!-- Modal -->
+    <div id="studyBreakModal" class="modal hide">
+      <div class="modal-content">
+          <span class="close-button" id="closeModalButton">&times;</span>
+          <h2>Bạn nên nghỉ ngơi!</h2>
+          <p>Bạn đã học được 20 thẻ. Hãy nghỉ ngơi trong 1 tiếng trước khi tiếp tục.</p>
+          <button id="startTimerButton">Bắt đầu đếm ngược</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

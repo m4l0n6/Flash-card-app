@@ -80,7 +80,7 @@ function showPython(){
         jsButton.disabled = false
         htmlButton.disabled = false
         cssButton.disabled = false
-        pythonButton.innerHTML = `Học tiếp`
+        pythonButton.innerHTML = `<a href="#course-container">Học tiếp</a>`
         nextCourse.classList.add("hide")
     }
 }

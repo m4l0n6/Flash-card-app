@@ -18,8 +18,11 @@
           <li><h1>OWLFLASH</h1></li>
           <li><a href="#">Home</a></li>
           <li><a href="#context">Các chủ đề </a></li>
+          <li><a href="#footer">Liên hệ</a></li>
+          <li class="theme-mode"><i class="fa-solid fa-moon"></i></li>
+          <li class="nav-login">Đăng nhập/Đăng kí</li>
         </ul>
-      </div>
+      </div>  
 
       <!-- Phần giới thiệu -->
       <div id="introduce">
@@ -35,7 +38,7 @@
           <!-- Phần hiển thị của Python -->
           <div class="courses-section-item hidden">
             <div class="item-container">
-              <div class="item-icon">
+              <div class="item-icon"> 
                 <img src="./Image/python.png" alt="">
               </div>
               <div class="item-content python">
@@ -43,7 +46,7 @@
                   <h1>Python</h1>
                 </div>
                 <div class="item-button">
-                  <button class="python-buton" onclick="showPython()"><a href="#course-container">Bắt đầu</a></button>
+                  <button class="python-buton" onclick="showPython()">Bắt đầu</button>
                 </div>
               </div>
             </div>
@@ -64,7 +67,7 @@
                   <h1>Javacript</h1>
                 </div>
                 <div class="item-button">
-                  <button class="js-buton" onclick="showJs()"><a href="#course-container">Bắt đầu</a></button>
+                  <button class="js-buton" onclick="showJs()">Bắt đầu</button>
                 </div>
               </div>
             </div>
@@ -85,7 +88,7 @@
                   <h1>HTML</h1>
                 </div>
                 <div class="item-button">
-                  <button class="html-buton" onclick="showHtml()"><a href="#course-container">Bắt đầu</a></button>
+                  <button class="html-buton" onclick="showHtml()">Bắt đầu</button>
                 </div>
               </div>
             </div>
@@ -105,7 +108,7 @@
                   <h1>CSS</h1>
                 </div>
                 <div class="item-button">
-                  <button class="css-buton" onclick="showCss()"><a href="#course-container">Bắt đầu</a></button>
+                  <button class="css-buton" onclick="showCss()">Bắt đầu</button>
                 </div>
               </div>
             </div>
@@ -725,8 +728,43 @@
         <!-- Phần câu hỏi của css: kết thúc -->
       </div><!-- Phần kết thúc của course -->
       
-      <!-- Phần kết thúc của thông báo -->
-    </div> <!-- Phần kết thúc của container -->
+      <!-- Phần bắt đầu của cuối trang -->
+      <div id="footer">
+          <!-- Phần giới thiệu nhóm: bắt đầu -->
+          <div class="about">
+            <div class="team">
+              <img src="./Image/Wingman.png" alt="Ảnh lỗi" width="90px" height="90px">
+              <p>OWLCODER</p>
+            </div>
+
+            <span class="split"></span>
+
+            <div class="contact">
+              <h2>Liên hệ</h2>
+              <p><i class="fa-solid fa-envelope"></i> mahonglonghg123@gmail</p>
+              <p><i class="fa-brands fa-github"></i><a href="https://github.com/m4l0n6"> github.com/m4l0n6</a></p>
+              <p><i class="fa-brands fa-facebook"></i> Ma Long</p>
+            </div>
+
+            <span class="split"></span>
+
+            <div class="subcribe">
+              <h2>Đăng ký</h2>
+              <input type="email" name="email" placeholder="Email">
+              <br>
+              <button type="submit">Gửi</button>
+            </div>
+          </div>
+          <!-- Phần giới thiệu nhóm: Kết thúc -->
+
+          <!-- Phần bản quyền -->
+          <div class="copyright">
+            <p>&copy; 2023 - 2024. All rights reserved.</p>
+          </div>
+      </div>
+      <!-- Phần kết thúc của cuối trang -->
+    </div> 
+    <!-- Phần kết thúc của container -->
 
     <!-- Phần bắt đầu của thanh thông báo -->
     <div id="toast" class="hide">
@@ -743,7 +781,7 @@
           </div>
       </div>
     </div>
-
+    <!-- Phần kết thúc của thông báo -->
     <div class="next-course hide">
       <a href="#context">Học tiếp<i class="fa-solid fa-arrow-up"></i></a>
     </div>

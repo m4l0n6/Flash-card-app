@@ -71,6 +71,7 @@ function showPython(){
         htmlButton.disabled = true
         cssButton.disabled = true
         pythonButton.textContent = `Tạm dừng`
+        window.location.href='#course-container'
     }
     else{
         pythonCard.forEach((card, index) => {
@@ -80,8 +81,9 @@ function showPython(){
         jsButton.disabled = false
         htmlButton.disabled = false
         cssButton.disabled = false
-        pythonButton.innerHTML = `<a href="#course-container">Học tiếp</a>`
+        pythonButton.innerHTML = `<a href="#course-container">Học tiếp</a>` 
         nextCourse.classList.add("hide")
+        window.location.href='#context'
     }
 }
 
@@ -188,6 +190,7 @@ function pythonReset() {
 // In ra flashcard liên quan đến js
 function showJs(){
     js.classList.toggle("hide")
+    window.location.href='#course-container';
     if (!js.classList.contains("hide")) {
         showJsCard(jsCurrentIndex);
         updateJsRememberCount();
@@ -195,6 +198,7 @@ function showJs(){
         htmlButton.disabled = true
         cssButton.disabled = true
         jsButton.textContent = `Tạm dừng`
+        window.location.href='#course-container'
     }
     else{
         jsCard.forEach((card, index) => {
@@ -206,6 +210,7 @@ function showJs(){
         cssButton.disabled = false
         jsButton.innerHTML = `<a href="#course-container">Học tiếp</a>`
         nextCourse.classList.add('hide')
+        window.location.href='#context'
     }
     
 }
@@ -321,6 +326,7 @@ function showHtml(){
         jsButton.disabled = true
         cssButton.disabled = true
         htmlButton.textContent = `Tạm dừng`
+        window.location.href='#course-container'
     }
     else{
         htmlCard.forEach((card, index) => {
@@ -331,6 +337,7 @@ function showHtml(){
         jsButton.disabled = false
         cssButton.disabled = false
         htmlButton.innerHTML = `<a href="#course-container">Học tiếp</a>`
+        window.location.href='#context'
     }
 }
 
@@ -446,6 +453,7 @@ function showCss(){
         jsButton.disabled = true
         htmlButton.disabled = true
         cssButton.textContent = `Tạm dừng`
+        window.location.href='#course-container'
     }
     else{
         cssCard.forEach((card, index) => {
@@ -456,6 +464,7 @@ function showCss(){
         jsButton.disabled = false
         htmlButton.disabled = false
         cssButton.innerHTML = `<a href="#course-container">Học tiếp</a>`
+        window.location.href='#context'
     }
 }
 
@@ -561,16 +570,21 @@ function cssReset() {
 // Các chức năng của liên quan đến flashcard của CSS: Kết thúc
 
 // Chắc năng làm rõ dần các thành phần khi scroll
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
-        console.log(entry)
-        if(entry.isIntersecting){
-            entry.target.classList.add('show')
-        } else{
-            entry.target.classList.remove('show')
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target); // Ngừng quan sát phần tử sau khi nó xuất hiện
         }
-    })
-}) 
-const hiddenElement = document.querySelectorAll('.hidden')
-hiddenElement.forEach((el) => observer.observe(el))
+    });
+});
 
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+// Đổi giao diện từ sáng sang tối và ngược lại
+let theme = document.querySelector(".theme-mode")
+theme.addEventListener("click", () => {
+    theme.innerHTML = '<li class="theme-mode"><i class="fa-regular fa-sun"></i></li>'
+    theme.classList.add("")
+})
